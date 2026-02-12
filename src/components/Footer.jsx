@@ -175,8 +175,8 @@ const Footer = () => {
                 Siddiq Kolimi
               </a>
               {' '}| For website creating contact me{' '}
-              <a href="tel:+919441629842" className="text-accent hover:text-accent-light transition-colors">
-                9441629842
+              <a href="tel:+919705116606" className="text-accent hover:text-accent-light transition-colors">
+                9705116606
               </a>
             </p>
           </div>

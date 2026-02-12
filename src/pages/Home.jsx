@@ -84,15 +84,15 @@ const HeroSection = () => (
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative hidden lg:block"
+          className="relative block mt-6 lg:mt-0"
         >
           <div className="relative">
             {/* Main image placeholder */}
-            <div className="w-full h-[500px] rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden relative">
+            <div className="w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[500px] rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden relative">
               <img
                 src="/images/school/logo-main-square.jpg"
                 alt="Sri Vikash High School logo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain lg:object-cover bg-white"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/30 via-transparent to-transparent" />
             </div>
@@ -113,7 +113,7 @@ const HeroSection = () => (
 
 /* ─── Stats Section ─── */
 const StatsSection = () => (
-  <section className="relative -mt-1 bg-white">
+  <section className="relative -mt-6 sm:-mt-10 lg:-mt-16 bg-white">
     <div className="max-w-7xl mx-auto px-4">
       <div className="bg-gradient-to-r from-primary via-primary-light to-primary rounded-3xl p-8 md:p-12 shadow-2xl -mt-16 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
