@@ -12,7 +12,12 @@ const About = () => {
   ]
 
   const team = [
-    { name: 'Principal', role: 'School Principal', placeholder: 'P' },
+    {
+      name: 'Correspondent',
+      role: 'School Correspondent',
+      image: '/images/school/correspondent.jpg',
+      alt: 'Sri Vikas High School correspondent at office desk',
+    },
     { name: 'Vice Principal', role: 'Vice Principal', placeholder: 'VP' },
     { name: 'Academic Head', role: 'Head of Academics', placeholder: 'AH' },
     { name: 'Sports Director', role: 'Director of Sports', placeholder: 'SD' },
@@ -162,7 +167,11 @@ const About = () => {
               <AnimatedSection key={i} delay={i * 0.1}>
                 <motion.div whileHover={{ y: -8 }} className="bg-white rounded-3xl overflow-hidden shadow-lg text-center">
                   <div className="h-48 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
-                    <span className="text-5xl font-bold text-white/50">{member.placeholder}</span>
+                    {member.image ? (
+                      <img src={member.image} alt={member.alt || member.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="text-5xl font-bold text-white/50">{member.placeholder}</span>
+                    )}
                   </div>
                   <div className="p-6">
                     <h4 className="text-lg font-bold text-primary font-[family-name:var(--font-heading)]">{member.name}</h4>

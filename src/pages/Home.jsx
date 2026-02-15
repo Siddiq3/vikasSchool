@@ -416,6 +416,61 @@ const WhyChooseUs = () => {
   )
 }
 
+/* ─── Gallery Preview Section ─── */
+const GalleryPreviewSection = () => {
+  const galleryPreview = [
+    { image: '/images/school/campus-main-building-wide.jpg', title: 'Campus View' },
+    { image: '/images/school/assembly-ground-aerial.jpg', title: 'Morning Assembly' },
+    { image: '/images/school/classroom-learning-wide.jpg', title: 'Classroom Learning' },
+    { image: '/images/school/lab-computer-learning.jpg', title: 'Computer Lab' },
+    { image: '/images/school/annual-day.jpg', title: 'Annual Day' },
+    { image: '/images/school/sports-group-photo.jpg', title: 'Sports Activities' },
+    { image: '/images/school/medal-team.jpg', title: 'Achievements' },
+    { image: '/images/school/transport-buses-front-angle.jpg', title: 'School Transport' },
+  ]
+
+  return (
+    <section className="py-20 bg-cream">
+      <div className="max-w-7xl mx-auto px-4">
+        <AnimatedSection className="text-center mb-12">
+          <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
+            Campus Gallery
+          </span>
+          <h2 className="section-heading">Gallery Highlights</h2>
+          <p className="section-subheading mt-4">
+            A quick look at daily life, academics, events, and student achievements.
+          </p>
+        </AnimatedSection>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {galleryPreview.map((item, i) => (
+            <AnimatedSection key={item.image} delay={i * 0.06}>
+              <motion.div whileHover={{ y: -6 }} className="group rounded-2xl overflow-hidden shadow-lg bg-white">
+                <div className="h-44 md:h-48 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={`Sri Vikas High School ${item.title}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="px-4 py-3">
+                  <p className="text-sm font-semibold text-primary">{item.title}</p>
+                </div>
+              </motion.div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <AnimatedSection className="text-center mt-10">
+          <Link to="/gallery" className="btn-primary">
+            View Full Gallery
+          </Link>
+        </AnimatedSection>
+      </div>
+    </section>
+  )
+}
+
 /* ─── FAQ Section ─── */
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null)
@@ -572,7 +627,7 @@ const CTASection = () => (
           <Link to="/contact" className="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 inline-block">
             Book a Tour
           </Link>
-          <a href="tel:+919441629842" className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all inline-block">
+          <a href="tel:+919490103033" className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all inline-block">
             Call Us Now
           </a>
         </div>
@@ -597,6 +652,7 @@ const Home = () => {
       <FeaturedSection />
       <DiscoverSection />
       <WhyChooseUs />
+      <GalleryPreviewSection />
       <TestimonialsSection />
       <FAQSection />
       <CTASection />

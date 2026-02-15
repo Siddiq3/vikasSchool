@@ -49,9 +49,9 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-6 -mt-20 relative z-10 mb-16">
             {[
-              { icon: FaPhoneAlt, title: 'Call Us', info: '+91 94416 29842', link: 'tel:+919441629842', color: 'from-primary to-primary-light' },
-              { icon: FaWhatsapp, title: 'WhatsApp', info: '+91 94416 29842', link: 'https://wa.me/919441629842', color: 'from-secondary to-secondary-light' },
-              { icon: FaEnvelope, title: 'Email Us', info: 'info@srivikashighschool.com', link: 'mailto:info@srivikashighschool.com', color: 'from-warm to-warm-light' },
+              { icon: FaPhoneAlt, title: 'Call Us', info: '+91 94901 03033 / +91 94416 29842', link: 'tel:+919490103033', color: 'from-primary to-primary-light' },
+              { icon: FaWhatsapp, title: 'WhatsApp', info: '+91 94901 03033', link: 'https://wa.me/919490103033', color: 'from-secondary to-secondary-light' },
+              { icon: FaEnvelope, title: 'Email Us', info: 'srivikashighschoolem@gmail.com', link: 'mailto:srivikashighschoolem@gmail.com', color: 'from-warm to-warm-light' },
               { icon: FaClock, title: 'Working Hours', info: 'Mon-Sat: 8AM - 5PM', link: null, color: 'from-primary-dark to-primary' },
             ].map((card, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
@@ -258,6 +258,8 @@ const Contact = () => {
                       <FaPhoneAlt className="text-accent text-xl mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-semibold">Phone</p>
+                        <a href="tel:+919490103033" className="text-white/70 text-sm hover:text-accent transition-colors">+91 94901 03033</a>
+                        <span className="text-white/60 text-xs block mt-1">or</span>
                         <a href="tel:+919441629842" className="text-white/70 text-sm hover:text-accent transition-colors">+91 94416 29842</a>
                       </div>
                     </div>
@@ -265,7 +267,7 @@ const Contact = () => {
                       <FaEnvelope className="text-accent text-xl mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-semibold">Email</p>
-                        <a href="mailto:info@srivikashighschool.com" className="text-white/70 text-sm hover:text-accent transition-colors">info@srivikashighschool.com</a>
+                        <a href="mailto:srivikashighschoolem@gmail.com" className="text-white/70 text-sm hover:text-accent transition-colors">srivikashighschoolem@gmail.com</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">

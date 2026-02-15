@@ -36,12 +36,15 @@ const TopBar = () => {
       {/* Info Bar */}
       <div className="bg-primary-dark text-white py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 lg:gap-6 flex-wrap">
+            <a href="tel:+919490103033" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <FaPhoneAlt className="text-accent" /> +91 94901 03033
+            </a>
             <a href="tel:+919441629842" className="flex items-center gap-2 hover:text-accent transition-colors">
               <FaPhoneAlt className="text-accent" /> +91 94416 29842
             </a>
-            <a href="mailto:info@srivikashighschool.com" className="flex items-center gap-2 hover:text-accent transition-colors">
-              <FaEnvelope className="text-accent" /> info@srivikashighschool.com
+            <a href="mailto:srivikashighschoolem@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <FaEnvelope className="text-accent" /> srivikashighschoolem@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-2">

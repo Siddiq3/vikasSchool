@@ -25,7 +25,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/" className="flex items-center gap-3 mb-4">
+            <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-4">
               <div className="w-11 h-11 rounded-full bg-white p-1 overflow-hidden">
                 <img
                   src="/images/school/logo-square.jpg"
@@ -77,6 +77,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
+                    onClick={scrollToTop}
                     className="text-gray-300 hover:text-accent transition-colors text-sm flex items-center gap-2"
                   >
                     <span className="text-accent">›</span> {link.name}
@@ -104,6 +105,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     to={link.path}
+                    onClick={scrollToTop}
                     className="text-gray-300 hover:text-accent transition-colors text-sm flex items-center gap-2"
                   >
                     <span className="text-accent">›</span> {link.name}
@@ -123,9 +125,9 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 font-[family-name:var(--font-heading)]">Get In Touch!</h4>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+919441629842" className="flex items-center gap-3 text-gray-300 hover:text-accent transition-colors text-sm">
+                <a href="tel:+919490103033" className="flex items-center gap-3 text-gray-300 hover:text-accent transition-colors text-sm">
                   <FaPhoneAlt className="text-accent flex-shrink-0" />
-                  +91 94416 29842
+                  +91 94901 03033
                 </a>
               </li>
               <li>
@@ -135,9 +137,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@srivikashighschool.com" className="flex items-center gap-3 text-gray-300 hover:text-accent transition-colors text-sm">
+                <a href="mailto:srivikashighschoolem@gmail.com" className="flex items-center gap-3 text-gray-300 hover:text-accent transition-colors text-sm">
                   <FaEnvelope className="text-accent flex-shrink-0" />
-                  info@srivikashighschool.com
+                  srivikashighschoolem@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-gray-300 text-sm">
@@ -152,7 +154,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <Link to="/admissions" className="btn-primary mt-6 text-sm !px-6 !py-2">
+            <Link to="/admissions" onClick={scrollToTop} className="btn-primary mt-6 text-sm !px-6 !py-2">
               Enroll Now
             </Link>
           </motion.div>

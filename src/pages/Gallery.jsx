@@ -183,7 +183,7 @@ const Gallery = () => {
       category: 'events',
       title: 'Auditorium Visit',
       description: 'Students attending educational theatre outing',
-      image: '/images/school/auditorium-student-visit.jpg',
+      image: '/images/school/sports-kabaddi-session.jpg',
     },
     {
       id: 26,
@@ -260,7 +260,7 @@ const Gallery = () => {
       category: 'sports',
       title: 'Kabaddi Session',
       description: 'Students actively participating in kabaddi',
-      image: '/images/school/sports-kabaddi-session.jpg',
+      image: '/images/school/auditorium-student-visit.jpg',
     },
     {
       id: 37,
@@ -437,7 +437,7 @@ const Gallery = () => {
               {
                 title: 'Sports Complex',
                 desc: 'Structured sports activities for fitness, teamwork, and leadership.',
-                image: '/images/school/sports-kabaddi-session.jpg',
+                image: '/images/school/auditorium-student-visit.jpg',
               },
               {
                 title: 'Campus Infrastructure',
@@ -447,7 +447,7 @@ const Gallery = () => {
               {
                 title: 'Auditorium & Exposure',
                 desc: 'Educational visits and large group learning experiences.',
-                image: '/images/school/auditorium-student-visit.jpg',
+                image: '/images/school/sports-kabaddi-session.jpg',
               },
               {
                 title: 'Transport & Safety',
