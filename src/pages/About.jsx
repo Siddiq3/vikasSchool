@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaGraduationCap, FaTrophy, FaHeart, FaStar, FaBullseye, FaEye, FaHandshake } from 'react-icons/fa'
+import { FaGraduationCap, FaTrophy, FaHeart, FaStar, FaBullseye, FaEye, FaHandshake, FaTimes } from 'react-icons/fa'
 import AnimatedSection from '../components/AnimatedSection'
 import StatsCounter from '../components/StatsCounter'
 
 const About = () => {
+  const [selectedMember, setSelectedMember] = useState(null)
+
   const values = [
     { icon: FaGraduationCap, title: 'Excellence', description: 'Striving for the highest standards in academics and character.' },
     { icon: FaHeart, title: 'Compassion', description: 'Fostering empathy and kindness in every interaction.' },
@@ -18,9 +21,46 @@ const About = () => {
       image: '/images/school/correspondent.jpg',
       alt: 'Sri Vikas High School correspondent at office desk',
     },
-    { name: 'Vice Principal', role: 'Vice Principal', placeholder: 'VP' },
-    { name: 'Academic Head', role: 'Head of Academics', placeholder: 'AH' },
-    { name: 'Sports Director', role: 'Director of Sports', placeholder: 'SD' },
+    {
+      name: 'Principal',
+      role: 'Principal',
+      image: '/images/school/principal.jpg',
+      alt: 'Sri Vikas High School principal',
+    },
+    {
+      name: 'Managing Director',
+      role: 'Managing Director',
+      image: '/images/school/academic-head.jpg',
+      alt: 'Sri Vikas High School managing director',
+    },
+    {
+      name: 'Maths Teacher',
+      role: 'Maths Teacher',
+      image: '/images/school/maths-teacher.jpg',
+      alt: 'Sri Vikas High School maths teacher',
+      imageFit: 'contain',
+    },
+    {
+      name: 'Telugu Sir',
+      role: 'Telugu Teacher',
+      image: '/images/school/telugu-sir.jpg',
+      alt: 'Sri Vikas High School Telugu teacher',
+      imagePosition: 'top',
+      imageFit: 'contain',
+    },
+    {
+      name: 'Physics Teacher',
+      role: 'Physics Teacher',
+      image: '/images/school/physics-teacher.jpg',
+      alt: 'Sri Vikas High School physics teacher',
+    },
+    {
+      name: 'Physical Education Teacher',
+      role: 'Physical Education Teacher',
+      image: '/images/school/physical-education-teacher.jpg',
+      alt: 'Sri Vikas High School physical education teacher',
+      imageFit: 'contain',
+    },
   ]
 
   const achievements = [
@@ -166,9 +206,21 @@ const About = () => {
             {team.map((member, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <motion.div whileHover={{ y: -8 }} className="bg-white rounded-3xl overflow-hidden shadow-lg text-center">
-                  <div className="h-48 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                  <div className={`h-48 flex items-center justify-center ${member.imageFit === 'contain' ? 'bg-white p-2' : 'bg-gradient-to-br from-primary to-primary-light'}`}>
                     {member.image ? (
-                      <img src={member.image} alt={member.alt || member.name} className="w-full h-full object-cover" />
+                      <button
+                        type="button"
+                        className="w-full h-full cursor-zoom-in"
+                        onClick={() => setSelectedMember(member)}
+                        aria-label={`Open ${member.name} image`}
+                      >
+                        <img
+                          src={member.image}
+                          alt={member.alt || member.name}
+                          className={`w-full h-full ${member.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                          style={{ objectPosition: member.imagePosition || 'center' }}
+                        />
+                      </button>
                     ) : (
                       <span className="text-5xl font-bold text-white/50">{member.placeholder}</span>
                     )}
@@ -183,6 +235,41 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {selectedMember && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedMember(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            className="relative max-w-4xl w-full max-h-[85vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedMember.image}
+              alt={selectedMember.alt || selectedMember.name}
+              className="w-full max-h-[85vh] object-contain rounded-3xl bg-black"
+            />
+            <div className="absolute left-0 right-0 bottom-0 p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-3xl">
+              <h3 className="text-2xl font-bold text-white">{selectedMember.name}</h3>
+              <p className="text-white/80 text-sm">{selectedMember.role}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setSelectedMember(null)}
+              className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors cursor-pointer"
+              aria-label="Close image preview"
+            >
+              <FaTimes />
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
 
       {/* Achievements */}
       <section className="py-20 bg-white">

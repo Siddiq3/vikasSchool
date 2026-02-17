@@ -186,6 +186,27 @@ const Gallery = () => {
       image: '/images/school/sports-kabaddi-session.jpg',
     },
     {
+      id: 43,
+      category: 'events',
+      title: 'Cultural Krishna Performance',
+      description: 'Students performing in traditional costume during school event',
+      image: '/images/school/event-cultural-krishna-group.jpg',
+    },
+    {
+      id: 44,
+      category: 'events',
+      title: 'Cultural Girls Group',
+      description: 'Students and teacher during cultural stage performance',
+      image: '/images/school/event-cultural-girls-group.jpg',
+    },
+    {
+      id: 45,
+      category: 'events',
+      title: 'Traditional Dance Performance',
+      description: 'Students presenting a vibrant dance act on event stage',
+      image: '/images/school/event-cultural-dance-group.jpg',
+    },
+    {
       id: 26,
       category: 'achievements',
       title: 'Medal Winner - Boy',
